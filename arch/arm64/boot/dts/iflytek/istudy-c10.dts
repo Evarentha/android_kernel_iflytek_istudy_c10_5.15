@@ -1,0 +1,35 @@
+/* Copyright (C) 2026 Evarentha - Linux 5.15 board port changes. */
+/dts-v1/;
+
+#include <dt-bindings/clock/sprd,roc1-clk.h>
+
+/ {
+	interrupt-parent = <0x01>;
+	#address-cells = <0x02>;
+	#size-cells = <0x02>;
+	cpuinfo_hardware = "Unisoc UD710";
+	model = "iFLYTEK iStudy C10";
+	compatible = "sprd,tx20", "sprd,ud710";
+	sprd,sc-id = <0x2c6 0x01 0x20000>;
+
+	/* U-Boot clamps this runtime request to its compiled log-level maximum. */
+	mitochodria,uboot-log-level = <0x02>;
+
+#include "istudy-c10/qos.dtsi"
+#include "istudy-c10/aliases.dtsi"
+#include "istudy-c10/soc.dtsi"
+#include "istudy-c10/audio-platform.dtsi"
+#include "istudy-c10/fixed-clocks.dtsi"
+#include "istudy-c10/multimedia-dvfs.dtsi"
+#include "istudy-c10/cpu.dtsi"
+#include "istudy-c10/power-debug.dtsi"
+#include "istudy-c10/platform.dtsi"
+#include "istudy-c10/thermal.dtsi"
+#include "istudy-c10/reserved-memory.dtsi"
+#include "istudy-c10/ion.dtsi"
+#include "istudy-c10/modem.dtsi"
+#include "istudy-c10/audio-card.dtsi"
+#include "istudy-c10/panels.dtsi"
+#include "istudy-c10/board.dtsi"
+
+};
